@@ -1,8 +1,8 @@
 <template>
   <div class="nes-container with-title">
     <p class="title bg-dark">{{ title }}</p>
-    <div class="mb-2">Earned reward: {{ reward.accruedReward }}</div>
-    <div class="mb-2">Claimed reward: {{ reward.paidOutReward }}</div>
+    <div class="mb-2">Earned reward: {{ reward.accruedReward / 1000000000}}</div>
+    <div class="mb-2">Claimed reward: {{ reward.paidOutReward / 1000000000 }}</div>
     <div v-if="parseRewardType(farmReward) === 'variable'">
      <!-- <div class="mb-2 w-full bg-black text-white">Variable reward:</div> -->
      <!-- <div class="mb-2">

@@ -40,24 +40,24 @@
           @click="beginStaking" 
           
         >
-          Begin staking
+          Begin Training
         </button>
         <button
           v-if="farmerState === 'staked'"
           class="btn is-error mr-5"
           @click="endStaking"
         >
-          End staking
+          End Training
         </button>
         <button
           v-if="farmerState === 'pendingCooldown'"
           class="is-error mr-5"
           @click="endStaking"
         >
-          End cooldown
+          Heal Paladin
         </button>
         <button class="btn is-dark" @click="claim">
-          Claim {{ availableA }} PALD
+          Claim {{ availableA /1000000000}} PALD
         </button>
       </Vault>
     </div>

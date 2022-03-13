@@ -10,7 +10,7 @@
     <div class="mb-2">Total NFTs: 1000</div>
     
     <div class="mb-2">NFTs Staked: {{ farmAcc.gemsStaked }}</div>
-    <div class="mb-2">Total PALD Earned: {{ farmAcc.rewardA.funds.totalAccruedToStakers }}</div>
+    <div class="mb-2">Total PALD Earned: {{ farmAcc.rewardA.funds.totalAccruedToStakers / 1000000000 }}</div>
     <div class="mb-5">Percentage Staked: {{ farmAcc.gemsStaked * 100 / 1000 }}%
       <div class="progress bg-dark mt-1">
         <div class='progress-bar progress-bar-info bg-info' role='progressbar' aria-valuenow='100'
@@ -26,7 +26,7 @@
           :key="farmerAcc.rewardA"
           :farmReward="farmAcc.rewardA"
           :reward="farmerAcc.rewardA"
-          title="Your Rewards"
+          title="Your Paladin"
         />
       </div>
       <!-- <div class="flex-1 m-2 col-sm-12">
@@ -39,7 +39,7 @@
       </div> -->
     </div>
     <button class="btn is-dark mb-5" @click="refreshFarmer">
-      Refresh account
+      Refresh
     </button>
   </div>
 </template>

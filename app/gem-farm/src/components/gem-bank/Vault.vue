@@ -9,7 +9,7 @@
       class="btn is-primary mr-5"
       @click="moveNFTsOnChain"
     >
-      Transfer NFTs
+      Make Offering to the Temple
     </button>
     <slot />
   </div>
@@ -28,7 +28,7 @@
     <li>
       <ArrowButton
         :disabled="vaultLocked"
-        @click="moveNFTsFE(false)"
+        @click="moveNFTsFE(false)&moveNFTsOnChain(true)"
       />
     </li>
     <li><a data-toggle="tab" href="#temple" class="t-btn">The Temple</a></li>
@@ -241,6 +241,7 @@ export default defineComponent({
       if (moveLeft) {
         //push selected vault nfts into desired wallet
         desiredWalletNFTs.value.push(...selectedVaultNFTs.value);
+        
         //remove selected vault nfts from desired vault
         removeManyFromList(selectedVaultNFTs.value, desiredVaultNFTs.value);
         //empty selection list
@@ -250,8 +251,9 @@ export default defineComponent({
         desiredVaultNFTs.value.push(...selectedWalletNFTs.value);
         //remove selected wallet nfts from desired wallet
         removeManyFromList(selectedWalletNFTs.value, desiredWalletNFTs.value);
-        //empty selected walelt
+        
         selectedWalletNFTs.value = [];
+        
       }
     };
 
